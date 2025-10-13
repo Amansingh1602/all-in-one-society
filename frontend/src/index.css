@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Single background image styling */
+.min-h-screen {
+  background-image: linear-gradient(rgba(241, 196, 15, 0.7), rgba(255, 255, 255, 0.8)), url('/images/hqzxtay1_med.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-image 0.3s ease;
+}
+
+/* Dark mode background */
+.dark .min-h-screen {
+  background-image: linear-gradient(rgba(17, 24, 39, 0.85), rgba(31, 41, 55, 0.9)), url('/images/hqzxtay1_med.jpg');
+}
+
+/* Remove problematic card overrides - let Tailwind handle it naturally */
+
+/* Navigation bar transparency */
+nav.bg-white {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.dark nav.bg-white {
+  background-color: rgba(37, 99, 235, 0.95) !important;
+}
+
+/* Dark mode text colors */
+.dark {
+  color-scheme: dark;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Override specific dark mode styles */
+.dark .text-gray-900 {
+  color: rgb(243 244 246) !important;
+}
+
+.dark .text-gray-700 {
+  color: rgb(209 213 219) !important;
+}
+
+.dark .text-gray-600 {
+  color: rgb(156 163 175) !important;
+}
+
+.dark .text-gray-500 {
+  color: rgb(107 114 128) !important;
+}
+
+/* Dark mode form elements */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="date"],
+.dark input[type="time"],
+.dark input[type="datetime-local"],
+.dark input[type="search"],
+.dark textarea,
+.dark select {
+  background-color: rgba(17, 24, 39, 0.8) !important;
+  border-color: rgb(75 85 99) !important;
+  color: rgb(243 244 246) !important;
+}
+
+.dark input[type="text"]:focus,
+.dark input[type="email"]:focus,
+.dark input[type="password"]:focus,
+.dark input[type="date"]:focus,
+.dark input[type="time"]:focus,
+.dark input[type="datetime-local"]:focus,
+.dark input[type="search"]:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: rgb(59 130 246) !important;
+  box-shadow: 0 0 0 1px rgb(59 130 246) !important;
+}
+
+/* Dark mode placeholder text */
+.dark ::placeholder {
+  color: rgb(107 114 128) !important;
+}
+
+/* Poll container removed - using basic Tailwind classes */
