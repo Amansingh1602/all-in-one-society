@@ -45,9 +45,12 @@ all-in-one-society/          ← GitHub Repository
    ```
 
 2. **Deploy Frontend to Vercel**:
-   - Import GitHub repository
-   - Set Root Directory to `frontend`
-   - Add environment variable in Vercel:
+   - Import GitHub repository: `Amansingh1602/all-in-one-society`
+   - **CRITICAL**: In project settings, set Root Directory to `frontend`
+   - Framework: Vite (should auto-detect)
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Add environment variable in Vercel dashboard:
      ```
      VITE_API_URL=https://your-render-app-name.onrender.com/api
      ```
