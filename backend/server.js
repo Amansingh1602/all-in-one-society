@@ -10,7 +10,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:3000', 
   'http://localhost:3001',
-  'https://your-vercel-app.vercel.app', // Replace with your actual Vercel URL
+  'https://all-in-one-society-ryxf.vercel.app/', // Replace with your actual Vercel URL
   process.env.FRONTEND_URL // Set this in Render environment variables
 ].filter(Boolean);
 
