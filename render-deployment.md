@@ -7,10 +7,25 @@
    - Get your connection string (looks like: mongodb+srv://username:password@cluster.mongodb.net/)
 
 ## Step 2: Deploy Backend to Render
+
+### Repository Structure:
+```
+all-in-one-society/          ← GitHub Repository
+├── backend/                 ← Set this as Root Directory in Render
+│   ├── server.js
+│   ├── package.json
+│   └── ...
+├── frontend/                ← Set this as Root Directory in Vercel  
+│   ├── src/
+│   ├── package.json
+│   └── ...
+└── other files
+```
+
 1. **Go to Render.com** and sign up/login
 2. **Create New Web Service**:
    - Connect your GitHub repository: `Amansingh1602/all-in-one-society`
-   - **Root Directory**: `backend`
+   - **Root Directory**: `backend` (Important: This tells Render to use the backend folder as the project root)
    - **Environment**: `Node`
    - **Build Command**: `npm install`
    - **Start Command**: `npm start`
