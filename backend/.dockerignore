@@ -1,6 +1,7 @@
 node_modules
 npm-debug.log
 .env
+.env.local
 .git
 .gitignore
 README.md
@@ -8,5 +9,10 @@ README.md
 .idea
 *.md
 .DS_Store
+Dockerfile
+.dockerignore
 uploads/*
 !uploads/.gitkeep
+test-*.js
+check-admin.js
+createAdmin.js
