@@ -43,10 +43,11 @@ app.use('/uploads', (req, res, next) => {
 
 // Connect to MongoDB
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/society_m';
+console.log('Connecting to MongoDB:', mongoUri.replace(/:[^:@]*@/, ':****@')); // Hide password in logs
 mongoose.set('strictQuery', false);
 mongoose.connect(mongoUri)
   .then(() => {
-    console.log('MongoDB connected');
+    console.log('✅ MongoDB connected successfully');
     // Create default admin user if not exists
     const User = require('./models/User');
     User.findOne({ email: 'admin@society.com' }).then(admin => {
@@ -64,7 +65,11 @@ mongoose.connect(mongoUri)
       }
     });
   })
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => {
+    console.error('❌ MongoDB connection failed:', err.message);
+    console.error('💡 Make sure to set MONGO_URI environment variable with your MongoDB Atlas connection string');
+    process.exit(1); // Exit if database connection fails
+  });
 
 // Ensure uploads directory exists
 const fs = require('fs').promises;
