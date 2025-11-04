@@ -10,8 +10,8 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:3000', 
   'http://localhost:3001',
-  'https://all-in-one-society-ryxf.vercel.app',
-  'https://all-in-one-society-ryxf-aman-singhs-projects-12a28ec0.vercel.app' // Replace with your actual Vercel URL
+  'https://all-in-one-society-ryxf.vercel.app/',
+  'https://all-in-one-society-ryxf-aman-singhs-projects-12a28ec0.vercel.app/' // Replace with your actual Vercel URL
   // Set this in Render environment variables
 ].filter(Boolean);
 
@@ -27,10 +27,9 @@ app.use(cors({
     }
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.options('*', cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 

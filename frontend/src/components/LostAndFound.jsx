@@ -220,7 +220,7 @@ export default function LostAndFound() {
             <div className="relative">
               {item.image && (
                 <img
-                  src={`http://localhost:5000${item.image}`}
+                  src={`${import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000'}${item.image}`}
                   alt={item.title}
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
