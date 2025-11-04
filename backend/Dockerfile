@@ -4,12 +4,11 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package files (handle both root and backend directory builds)
 COPY package*.json ./
 
 # Install dependencies
-# Use npm install instead of npm ci since package-lock.json might not be available
-RUN npm install --only=production
+RUN npm install --omit=dev
 
 # Copy application files
 COPY . .
