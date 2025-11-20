@@ -32,6 +32,9 @@ A comprehensive society management application built with React and Node.js, fea
 - Multer for file uploads
 - CORS enabled
 
+  ### Cloud
+  -Docker
+
 ## Getting Started
 
 ### Prerequisites
